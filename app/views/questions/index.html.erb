@@ -8,4 +8,6 @@
 
 <hr>
 
-<%= link_to "New Question", new_question_path %>
+<% if current_user %>
+  <%= link_to "New Question", new_question_path %>
+<% end %>
