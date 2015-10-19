@@ -1,0 +1,11 @@
+<%= render "layouts/errors", :object => @user %>
+
+<%= form_for @user do |f| %>
+<%= f.label :email %>
+<%= f.text_field :email %>
+
+<%= radio_button_tag(:admin, "Admin") %>
+<%= label_tag(:admin,  "Admin") %>
+<%= f.submit %>
+
+<% end %>

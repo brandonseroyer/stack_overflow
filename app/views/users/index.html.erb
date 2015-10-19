@@ -1,0 +1,19 @@
+<h1>Admin View</h1>
+
+<ul>
+  <% @users.each do |user| %>
+  <li>
+    <%= user.email %>
+    <% if user.admin %>
+      Admin
+    <% end %>
+    <%= link_to "Edit", edit_user_path(user) %> |
+    <%= link_to "Delete", user_path(user),
+    :data => {:confirm => "Are you sure?",
+      :method => "delete"} %>
+  </li>
+  <% end %>
+
+</ul>
+
+<hr>
