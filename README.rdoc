@@ -26,3 +26,10 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+"$2a$10$lY1tzQJ/tSNSaK0ZNLz7JO" password salt
+"$2a$10$lY1tzQJ/tSNSaK0ZNLz7JOLlGmohCgYysIgjI0M4g6SCDfj7e0N7G" hash
+
+"$2a$10$DyTNMxuieG/T2xlML5kE3O" salt
+"$2a$10$DyTNMxuieG/T2xlML5kE3O4GJUulwJAlnwdv28an9R0xd/enMeLTK" hash

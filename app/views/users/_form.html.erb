@@ -3,9 +3,13 @@
 <%= form_for @user do |f| %>
 <%= f.label :email %>
 <%= f.text_field :email %>
-
-<%= radio_button_tag(:admin, "Admin") %>
+<%=f.label :password %>
+<%=f.password_field :password %>
+<%=f.label :password_confirmation %>
+<%=f.password_field :password_confirmation %>
+<%= check_box_tag(:admin, true) %>
 <%= label_tag(:admin,  "Admin") %>
+
 <%= f.submit %>
 
 <% end %>
