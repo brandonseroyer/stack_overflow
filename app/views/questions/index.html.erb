@@ -2,7 +2,7 @@
 
 <ul>
   <% @questions.each do |question| %>
-  <li><%= link_to question.question, question_path(question) %></li>
+  <li><%= link_to question.question, question_path(question) %> by <%= question.author %></li>
   <% end %>
 </ul>
 

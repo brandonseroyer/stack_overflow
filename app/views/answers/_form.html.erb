@@ -3,5 +3,7 @@
 <%= form_for [@question, @answer] do |f| %>
   <%= f.label :answer %>
   <%= f.text_field :answer %>
+  <%= check_box_tag(:best_answer, true) %>
+  <%= label_tag(:best_answer,  "Best Answer") %>
   <p><%= f.submit %></p>
 <% end %>

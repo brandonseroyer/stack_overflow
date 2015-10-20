@@ -7,6 +7,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answers = @question.answers.order(rank: :asc)
     render :show
   end
 
@@ -31,6 +32,7 @@ class QuestionsController < ApplicationController
 
   def update
     @question= Question.find(params[:id])
+
     if @question.update(question_params)
       redirect_to questions_path
     else
@@ -46,7 +48,7 @@ class QuestionsController < ApplicationController
 
   private
   def question_params
-    params.require(:question).permit(:question, :author)
+    params.require(:question).permit(:question, :user_id, :author)
   end
 
   def find_question

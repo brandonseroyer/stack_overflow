@@ -23,6 +23,8 @@ class AnswersController < ApplicationController
 
   def update
     @answer = Answer.find(params[:id])
+    @answer.best_answer = params[:best_answer]
+
     if @answer.update(answer_params)
       redirect_to question_path(@answer.question)
     else
@@ -38,6 +40,6 @@ class AnswersController < ApplicationController
 
   private
   def answer_params
-    params.require(:answer).permit(:answer, :author)
+    params.require(:answer).permit(:answer, :best_answer, :author)
   end
 end

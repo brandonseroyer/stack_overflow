@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151019213721) do
+ActiveRecord::Schema.define(version: 20151020220721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,10 @@ ActiveRecord::Schema.define(version: 20151019213721) do
     t.string   "answer"
     t.string   "author"
     t.integer  "question_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "rank"
+    t.boolean  "best_answer", default: false
   end
 
   create_table "questions", force: :cascade do |t|
@@ -37,6 +39,7 @@ ActiveRecord::Schema.define(version: 20151019213721) do
     t.string   "author"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,6 +49,7 @@ ActiveRecord::Schema.define(version: 20151019213721) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.boolean  "admin",         default: false
+    t.string   "name"
   end
 
 end
